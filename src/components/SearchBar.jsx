@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-function SearchBar({ onSearch }) {
-    
+const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = (event) => {
@@ -12,7 +11,7 @@ function SearchBar({ onSearch }) {
     onSearch(searchTerm);
   };
 
-  const handleKeyPress = (event) => {
+  const handleKeyUp = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
     }
@@ -25,11 +24,11 @@ function SearchBar({ onSearch }) {
         placeholder="Cerca personaggio..."
         value={searchTerm}
         onChange={handleInputChange}
-        onKeyUp={handleKeyPress}
+        onKeyUp={handleKeyUp}
       />
       <button onClick={handleSearch}>Cerca</button>
     </div>
   );
-}
+};
 
 export default SearchBar;

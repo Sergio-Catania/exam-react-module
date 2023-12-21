@@ -5,17 +5,18 @@ import AboutPage from './components/AboutPage';
 import HomePage from './components/HomePage';
 import SearchPage from './components/SearchPage';
 import PersonPage from './components/PersonPage';
+import './App.css'
 
 
 function App() {
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage/>} />
           <Route path="/about" element={<AboutPage/>} />
-          <Route path="/search" element={<SearchPage onSearch=/>} />
+          <Route path="/search" element={<SearchPage/>} />
           <Route path="/person/:id" element={<PersonPage/>} />
         </Routes>
       </div>

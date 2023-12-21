@@ -3,8 +3,10 @@ import PersonCard from './PersonCard';
 import SearchBar from './SearchBar';
 const apiKey = import.meta.env.VITE_API_KEY;
 
-function SearchPage() {
+
+const SearchPage = () => {
   const [searchResults, setSearchResults] = useState([]);
+
   const handleSearch = async (searchValue) => {
     try {
       const response = await fetch(
@@ -27,12 +29,13 @@ function SearchPage() {
 
   return (
     <div>
-        <SearchBar onSearch={handleSearch}/>
+      <h1>Risultati della ricerca</h1>
+      <SearchBar onSearch={handleSearch} />
       {searchResults.map((person) => (
-        <PersonCard key={person.id} person={person} />
+        <PersonCard key={person.id} {...person} />
       ))}
     </div>
   );
-}
+};
 
 export default SearchPage;

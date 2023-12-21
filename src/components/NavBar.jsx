@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import SearchBar from './SearchBar';
 
 const NavBar = () => {
   return (
     <nav id="navbar">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/search">Search</Link></li>
+        <li className="navbar-item"><Link to="/">Home</Link></li>
+        <li className="navbar-item"><Link to="/about">About</Link></li>
+        <li className="navbar-item"><Link to="/search">Search</Link></li>
       </ul>
-      <SearchBar/>
     </nav>
   );
 };

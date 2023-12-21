@@ -14,7 +14,7 @@ function PersonPage() {
         );
 
         if (!response.ok) {
-          throw new Error(`Errore nella chiamata API`);
+          throw new Error(`Errore nella chiamata API: ${response.statusText}`);
         }
 
         const data = await response.json();

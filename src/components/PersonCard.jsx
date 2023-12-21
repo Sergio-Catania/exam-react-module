@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const apiKey = import.meta.env.VITE_API_KEY
+
 
 
 
