@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+const apiKey = import.meta.env.VITE_API_KEY
 
 function PersonPage() {
   const { id } = useParams();
@@ -8,7 +9,6 @@ function PersonPage() {
   useEffect(() => {
     const fetchPerson = async () => {
       try {
-        const apiKey = process.env.REACT_APP_TMDB_API_KEY;
         const response = await fetch(
           `https://api.themoviedb.org/3/person/${id}?api_key=${apiKey}`
         );
