@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PersonCard from './PersonCard';
+import SearchBar from './SearchBar';
+const apiKey = import.meta.env.VITE_API_KEY;
 
 function SearchPage() {
   const [searchResults, setSearchResults] = useState([]);
@@ -25,6 +27,7 @@ function SearchPage() {
 
   return (
     <div>
+        <SearchBar onSearch={handleSearch}/>
       {searchResults.map((person) => (
         <PersonCard key={person.id} person={person} />
       ))}
